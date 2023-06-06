@@ -1,0 +1,343 @@
+@font-face {
+  font-family: font-zangezi;
+  src: url(/public/fonts/BluuNext-Titling.otf);
+}
+
+@font-face {
+  font-family: font-zangezi2;
+  src: url(/public/fonts/CircularStd-Book.ttf);
+}
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.loader {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/6536804.png);
+  transition: all 2s ease-in-out;
+  object-fit: fill;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loading {
+  color: white; 
+  font-size: 1.5rem;
+}
+
+.loader--disappear {
+  opacity: 0;
+}
+
+
+
+.loader:before {
+	content: '';
+	width: 160px;
+	height: 160px;
+  margin-left: 0;
+  margin-top: 0;
+  color: #fff;
+  animation: fadeUp 2.4s ease-in-out;
+  transition: all 2s ease-in-out;
+	position: fixed;
+  background-image: url(./assets/ezgif-2-23ac8815f0.gif);
+  object-fit: fill;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* TRACK */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.23);
+}
+
+/* HANDLE */
+::-webkit-scrollbar-thumb {
+  background: white;
+  height: 10%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgb(45, 45, 45, 0.9);
+  transition: background-color 2s ease-in-out;
+}
+
+.overlay--disable {
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.overlay--disable a {
+  pointer-events: auto;
+}
+
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo {
+  font-family: font-zangezi, serif;
+  color: white;
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 35vh;
+  animation: fadeUp 2.4s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.sublogo {
+  font-family: font-zangezi2, serif;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 45vh;
+  animation: fadeUp 2.6s ease-in-out;
+  transition: all 2s ease-in-out;
+  max-width: 700px;
+  text-align:center;
+  font-weight: lighter;
+}
+
+.subsublogo {
+  font-family: font-zangezi2, serif;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 56vh;
+  animation: fadeUp 2.6s ease-in-out;
+  transition: all 2s ease-in-out;
+  max-width: 450px;
+  text-align:center;
+  font-weight: lighter;
+}
+
+.intro--disappear .logo {
+  top: 42px;
+  transform: scale(0.25);
+  transform-origin: center top;
+}
+
+.intro--disappear .sublogo {
+  top: 32px;
+  transform: scale(0.25);
+  transform-origin: center top;
+  opacity: 0;
+ 
+}
+
+.intro--disappear .subsublogo {
+  top: 32px;
+  transform: scale(0.25);
+  transform-origin: center top;
+  opacity: 0;
+ 
+}
+
+.intro__scroll {
+  opacity: 0;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  position: absolute;
+  top: 24vh;
+}
+
+.intro--disappear .intro__scroll {
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
+}
+
+.overlay--scrolled .intro__scroll {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+.explore {
+  padding: 1rem 2rem;
+  border: none;
+  font-family: font-zangezi, serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 320px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.42s ease-in-out;
+  animation: fadeIn 2.4s ease-in-out 2s forwards;
+  opacity: 0;
+  background-color: transparent;
+  color: white;
+}
+
+.explore:hover {
+  color: black
+}
+
+.explore:hover:before {
+  width: 200%;
+  height: 300%;
+  border-radius: 100%;
+}
+
+.explore:before {
+  content: "";
+  background:transparent;
+  position: absolute;
+  width: 0%;
+  bottom: 0;
+  left: 50%;
+  height: 0%;
+  transition: 0.42s ease-in-out;
+  z-index: -1;
+  transform: translateX(-50%) translateY(50%);
+}
+
+.intro--disappear .explore {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+.outro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+}
+
+.outro--appear {
+  opacity: 1;
+}
+
+.outro__text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 3rem;
+    letter-spacing: 0.25rem;
+  }
+
+  .intro--disappear .logo {
+    top: 24px;
+    transform: scale(0.5);
+    transform-origin: center top;
+  }
+
+  .outro__text {
+    font-size: 1rem;
+  }
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(9px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.about-button {
+  color: black;
+  font-family: font-zangezi;
+}
+
+.about {
+  /* styles for your about overlay */
+  display: none;
+}
+
+.about--visible {
+  display: block;
+  background-color: black;
+  /* add additional styles for a visible overlay if necessary */
+}
+   
